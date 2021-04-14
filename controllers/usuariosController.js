@@ -1,6 +1,6 @@
-const { Usuario, sequelize } = require('../models/');
+const { Usuario } = require('../models/');
 
-const usuariosController = {
+module.exports = {
   index: async (request, response) => {
     let usuarios = await Usuario.findAll();
 
