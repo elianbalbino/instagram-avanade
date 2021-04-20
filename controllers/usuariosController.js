@@ -1,10 +1,10 @@
 const { Usuario } = require('../models/');
 
-module.exports = {
+const usuariosController = {
   index: async (request, response) => {
     let usuarios = await Usuario.findAll();
 
-    return response.json(usuarios);
+    return response.render('usuarios', {listaUsuarios:usuarios});
   },
   create: async (request, response) => {
     let { nome, email, senha } = request.body;
